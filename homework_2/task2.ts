@@ -7,9 +7,10 @@ import { Book, getAllBooks } from "./task1";
 
 
 function logFirstAvailable(books: Book[]): void {
-    const firstAvailableBook = books.find(book => book.available)?.title || "No available books";
+    const bookQuantity: number = books.length; 
+    const firstAvailableBook: string = books.find(book => book.available)?.title || "No available books";
 
-    console.log(`Quantity of books: ${books.length}`);
+    console.log(`Quantity of books: ${bookQuantity}`);
     console.log(`The title of the first availble book: ${firstAvailableBook}`);
 }
 

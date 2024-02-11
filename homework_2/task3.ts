@@ -14,7 +14,7 @@ export enum Category {
 export type BookWithCategory = Book & {category: Category[]}
 
 export function getAllBooks(): BookWithCategory[] {
-      const books = [
+      const books: BookWithCategory[] = [
         { id: 1, title: 'Refactoring JavaScript', author: 'Evan Burchard', available: true, category: [Category.JavaScript] },
         { id: 2, title: 'JavaScript Testing', author: 'Liang Yuxian Eugene', available: false, category: [Category.JavaScript] },
         { id: 3, title: 'CSS Secrets', author: 'Lea Verou', available: true, category: [Category.CSS] },
