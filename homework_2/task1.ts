@@ -14,7 +14,7 @@ export type Book = {
     available: boolean
 }
 
-function getAllBooks(): Book[] {
+export function getAllBooks(): Book[] {
     const books = [
         { id: 1, title: 'Refactoring JavaScript', author: 'Evan Burchard', available: true},
         { id: 2, title: 'JavaScript Testing', author: 'Liang Yuxian Eugene', available: false },
