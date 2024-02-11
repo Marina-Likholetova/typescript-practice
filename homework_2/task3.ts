@@ -11,7 +11,7 @@ export enum Category {
     Angular
 }
 
-type BookWithCategory = Book & {category: Category[]}
+export type BookWithCategory = Book & {category: Category[]}
 
 export function getAllBooks(): BookWithCategory[] {
       const books = [
