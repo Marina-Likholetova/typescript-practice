@@ -21,6 +21,7 @@ export function getAllBooks(): Book[] {
         { id: 3, title: 'CSS Secrets', author: 'Lea Verou', available: true },
         { id: 4, title: 'Mastering JavaScript Object-Oriented Programming', author: 'Andrea Chiarelli', available: true }
     ]
+    
     return books;
 }
 

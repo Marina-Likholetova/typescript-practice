@@ -6,6 +6,7 @@ import { Category, getAllBooks } from "./task3";
 
 export function getBookTitlesByCategory(category: Category): string[] {
     const booksByCategory: string[] = getAllBooks().flatMap(book => book.category.includes(category) ? book.title : []);
+    
     return booksByCategory;
 }
 

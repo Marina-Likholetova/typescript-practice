@@ -6,9 +6,10 @@ import { getAllBooks, BookWithCategory } from "./task3";
 
 function getBookAuthorByIndex(index: number): [title: string, author: string] {
     const bookByIndex: BookWithCategory | undefined = getAllBooks()[index];
-    return (bookByIndex
+
+    return bookByIndex
         ? [bookByIndex.title, bookByIndex.author]
-        : ["No title by this index", "No autor by this index"]
-    )
+        : ["No title by this index", "No author by this index"]
+    
 }
 
