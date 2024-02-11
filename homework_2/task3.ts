@@ -3,7 +3,7 @@
 // Додайте категорію до об'єктів у функції getAllBooks().
 import { Book } from "./task1";
 
-enum Category {
+export enum Category {
     JavaScript,
     CSS,
     HTML,
@@ -13,7 +13,7 @@ enum Category {
 
 type BookWithCategory = Book & {category: Category[]}
 
-function getAllBooks(): BookWithCategory[] {
+export function getAllBooks(): BookWithCategory[] {
       const books = [
         { id: 1, title: 'Refactoring JavaScript', author: 'Evan Burchard', available: true, category: [Category.JavaScript] },
         { id: 2, title: 'JavaScript Testing', author: 'Liang Yuxian Eugene', available: false, category: [Category.JavaScript] },
