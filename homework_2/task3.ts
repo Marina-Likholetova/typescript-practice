@@ -24,4 +24,4 @@ export function getAllBooks(): BookWithCategory[] {
     return books;
 }
 
-console.log(getAllBooks());
+// console.log(getAllBooks());
