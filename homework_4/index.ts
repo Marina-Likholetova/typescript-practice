@@ -14,7 +14,7 @@ interface IBook {
     category: Category,
 }
 
-export enum Category {
+enum Category {
     JavaScript = "JavaScript",
     CSS = "CSS",
     HTML = "HTML",
