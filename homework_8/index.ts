@@ -85,7 +85,7 @@ class Shelf<T> {
 
     // додайте метод getFirst(), який нічого не приймає, і повертає перший елемент із items.
     getFirst(): T | null {
-        return this._items[1] || null;
+        return this._items[0] || null;
     }
 
     addAll(...items: T[]): void {
