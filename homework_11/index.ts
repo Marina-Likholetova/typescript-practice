@@ -54,9 +54,9 @@ const createCustomer: СreateCustomerFunctionType = (n, s) => n + s;
 
 // 7. Об'явіть змінну params, використовуючи аліас типу СreateCustomerFunctionType і утиліту Parameters, викличте функцію createCustomer(), передавши змінну params.
 
-let params: Parameters<СreateCustomerFunctionType> = [7, '8'];
+const params: Parameters<СreateCustomerFunctionType> = [7, '8'];
 
-console.log(createCustomer(...params));
+console.log(createCustomer(...params)); // 78
 
 // 8. Об'явіть аліас fn для функціонального типу функції, яка приймає три параметри з типами string, number, boolean і повертає тип symbol.
 
@@ -112,21 +112,22 @@ type MixedBookOptionalProps = OptionalProps<MixedBook>; // "available" | "catego
 // 13. Створіть утиліту RemoveProps <T extends object, TProps extends keyof T>, яка видаляє властивості TProps з переданого типу T.
 
 type RemoveProps<T extends object, TProps extends keyof T> = {
-    [K in keyof T as K extends TProps ? never : K]: T[K];
-};
-
-type RemoveProps2<T extends object, TProps extends keyof T> = {
     [K in keyof T as Exclude<K, TProps>]: T[K];
 };
+
+//інший варіант 
+// type RemoveProps<T extends object, TProps extends keyof T> = {
+//     [K in keyof T as K extends TProps ? never : K]: T[K];
+// };
 
 // 14. Об'явіть аліас типу BookRequiredPropsType та BookOptionalPropsType, використовуючи інтерфейс Book, аліаси типу BookRequiredProps та BookOptioalProps
 // та утиліту RemoveProps Спробуйте замість Book передати Author.
 
 type BookRequiredPropsType = RemoveProps<IBook, BookOptionalProps>;
-type BookOptionalPropsType = RemoveProps<IBook, BookRequiredProps>;
+type BookOptionalPropsType = RemoveProps<IBook, BookRequiredProps>; // {}
 
-type MixedBookRequiredPropsType = RemoveProps<MixedBook, MixedBookOptionalProps>;
-type MixedBookOptionalPropsType = RemoveProps<MixedBook, MixedBookRequiredProps>;
+type MixedBookRequiredPropsType = RemoveProps<MixedBook, MixedBookOptionalProps>; // {id: number, title: string, author: string }
+type MixedBookOptionalPropsType = RemoveProps<MixedBook, MixedBookRequiredProps>; // {available?: boolean, category?: Category}
 
 // 15. Створіть функцію update(), яка приймає один параметр типу boolean. Якщо значення аргументу true, функція повинна повертати значення типу string.
 // Якщо значення аргументу false, функція повинна повертати значення типу number.
