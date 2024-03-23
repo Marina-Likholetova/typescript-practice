@@ -120,6 +120,11 @@ type RemoveProps<T extends object, TProps extends keyof T> = {
 //     [K in keyof T as K extends TProps ? never : K]: T[K];
 // };
 
+// інший варіант 
+// type RemoveProps3<T extends object, TProps extends string | number | symbol> = {
+//     [K in Exclude<keyof T, TProps>]: T[K];
+// };
+
 // 14. Об'явіть аліас типу BookRequiredPropsType та BookOptionalPropsType, використовуючи інтерфейс Book, аліаси типу BookRequiredProps та BookOptioalProps
 // та утиліту RemoveProps Спробуйте замість Book передати Author.
 
